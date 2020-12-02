@@ -39,6 +39,31 @@ you can find sharing folder after below command.
   ls
   ```  
 
+6. Install the Git in the docker images   
+```apt-get update```  
+```apt-get install git```  
+to set the config of git,
+```git config --global user.name "[user name]"```  
+```git config --global user.email [email address]```  
+
+# Execution  
+1. Make the docker environment as a specific name  
+```sudo docker run -it -v [own root directory]/wspace:/root/wspace/ --gpus all --name [Specific name] pytorch/pytorch```  
+```(sudo docker run -it -v /home/gsethan/wspace:/root/wspace/ --gpus all --name AICM pytorch/pytorch)```  
+when you restart to the docker,
+```
+sudo docker start [Specific name]
+(sudo docker start AICM)
+sudo docker attach [Specific name]
+(sudo docker attach AICM)
+```
+
+2. Git clone on the `wspace` directory.
+```git clone https://github.com/gsethan17/conv-social-pooling.git```  
+to move to cloned folder.
+```cd conv-social-pooling```  
+to make the local branch as remoted execution branch  
+```git checkout -t origin/ExecutionTest```
 
 
 # Reference
